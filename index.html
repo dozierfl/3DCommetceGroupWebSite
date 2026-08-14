@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Family-owned business, providing high-quality, replenishable consumer goods and everyday essentials with dependable service, exceptional value, and customer care." />
+    <meta name="keywords" content="replenishable products, everyday essentials, consumer goods, household essentials, deli, necessities, family-owned business, online retailer, e-commerce, home essentials, personal care products, health and household, grocery essentials, kitchen essentials, cleaning supplies, trusted products, affordable everyday products, premium quality, reliable products, value and convenience, customer satisfaction, online shopping, HomeGoods, dependable products, fast fulfillment, family business" />
+    <meta name="author" content="3D Commerce Group" />
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="3D Commerce Group - Growth in Every Dimension" />
+    <meta property="og:description" content="Making Everyday Products Simple, Affordable, and Reliable." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.3dcgroup.com" />
+    <meta property="og:image" content="https://www.3dcgroup.com/og-image.jpg" />
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "3D Commerce Group",
+        "url": "https://www.3dcgroup.com",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "9065 Snipe Ln",
+            "addressLocality": "Jonesboro",
+            "addressRegion": "GA",
+            "postalCode": "30236",
+            "addressCountry": "US"
+        },
+        "telephone": "678.310.9551"
+    }
+    </script>
+    
+    <title>3D Commerce Group - Growth in Every Dimension</title>
+    
+    <style>
+        /* CSS Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            overflow: hidden;
+        }
+        
+        /* CSS Custom Properties */
+        :root {
+            --primary-navy: #1A237E;
+            --primary-sky: #29B6F6;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --background-light: #f8f9fa;
+            --border-radius: 8px;
+            --shadow-subtle: 0 2px 8px rgba(0, 0, 0, 0.1);
+            --shadow-hover: 0 4px 16px rgba(0, 0, 0, 0.15);
+            --transition: all 0.3s ease;
+            --max-width: 1200px;
+            --side-panel-width: 280px;
+            --top-panel-height: 68px;
+        }
+        
+        /* ===== LOGO STYLES ===== */
+        .logo-brand {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.1;
+            text-decoration: none;
+            color: var(--primary-navy);
+        }
+        
+        .logo-brand .logo-main {
+            font-size: 22px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            color: var(--primary-navy);
+        }
+        
+        .logo-brand .logo-main span {
+            color: var(--primary-sky);
+        }
+        
+        .logo-brand .logo-sub {
+            font-size: 8px;
+            font-weight: 600;
+            letter-spacing: 2.5px;
+            color: var(--text-light);
+            text-transform: uppercase;
+            margin-top: 1px;
+        }
+        
+        /* ===== TOP PANEL (fixed) ===== */
+        .top-panel {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: var(--top-panel-height);
+            background: white;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            padding: 0 24px;
+            gap: 16px;
+            flex-shrink: 0;
+        }
+        
+        .top-panel .hamburger-btn {
+            background: none;
+            border: none;
+            font-size: 28px;
+            cursor: pointer;
+            padding: 4px 8px;
+            line-height: 1;
+            color: var(--primary-navy);
+            transition: 0.2s;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .top-panel .hamburger-btn:hover {
+            background: #f0f0f0;
+        }
+        
+        .top-panel .spacer {
+            flex: 1;
+        }
+        
+        /* ===== SIDE PANEL (Navigation - slides in) ===== */
+        .side-panel {
+            position: fixed;
+            top: var(--top-panel-height);
+            left: 0;
+            width: var(--side-panel-width);
+            height: calc(100vh - var(--top-panel-height));
+            background: #ffffff;
+            box-shadow: 2px 0 16px rgba(0, 0, 0, 0.1);
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            padding: 24px 20px;
+            transform: translateX(-100%);
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow-y: auto;
+            flex-shrink: 0;
+            pointer-events: none;
+        }
+        
+        .side-panel.open {
+            transform: translateX(0);
+            pointer-events: auto;
+        }
+        
+        .side-panel .close-panel {
+            background: none;
+            border: none;
+            font-size: 28px;
+            line-height: 1;
+            cursor: pointer;
+            padding: 4px 8px;
+            color: #666;
+            transition: 0.2s;
+            border-radius: 4px;
+            align-self: flex-end;
+            margin-bottom: 16px;
+        }
+        
+        .side-panel .close-panel:hover {
+            color: #000;
+            background: #f0f0f0;
+        }
+        
+        .side-panel nav {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        
+        .side-panel nav a {
+            padding: 14px 18px;
+            border-radius: 10px;
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.05rem;
+            transition: 0.2s;
+            border-left: 3px solid transparent;
+        }
+        
+        .side-panel nav a:hover {
+            background: #f0f4ff;
+            color: var(--primary-navy);
+            border-left-color: var(--primary-sky);
+        }
+        
+        .side-panel nav a.active {
+            background: #e8edf9;
+            color: var(--primary-navy);
+            border-left-color: var(--primary-navy);
+            font-weight: 600;
+        }
+        
+        .side-panel .panel-footer {
+            margin-top: auto;
+            padding-top: 20px;
+            border-top: 1px solid #e8ecf1;
+            font-size: 0.85rem;
+            color: #999;
+        }
+        
+        /* ===== MAIN PANEL (Content area) ===== */
+        .main-panel {
+            flex: 1;
+            height: 100vh;
+            overflow-y: auto;
+            overflow-x: hidden;
+            padding-top: var(--top-panel-height);
+            background: #fff;
+            transition: margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            pointer-events: auto;
+        }
+        
+        .main-panel.shifted {
+            margin-left: var(--side-panel-width);
+        }
+        
+        /* ===== PAGE CONTENT (inside main panel) ===== */
+        .page-content {
+            background: #fff;
+        }
+        
+        /* ===== SECTION STYLES ===== */
+        .hero {
+            background: linear-gradient(135deg, rgba(26, 35, 126, 0.85), rgba(41, 182, 246, 0.8)),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23f0f2f5" width="1200" height="600"/><g fill="%23ddd"><circle cx="300" cy="150" r="80"/><circle cx="900" cy="450" r="120"/><rect x="100" y="400" width="200" height="100" rx="8"/><rect x="700" y="100" width="300" height="150" rx="12"/></g></svg>');
+            background-size: cover;
+            background-position: center;
+            min-height: calc(100vh - var(--top-panel-height));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 60px 20px 80px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: clamp(1.1rem, 2vw, 1.3rem);
+            margin-bottom: 40px;
+            opacity: 0.95;
+        }
+        
+        .values {
+            padding: 80px 20px;
+            background-color: var(--background-light);
+        }
+        
+        .values h2 {
+            text-align: center;
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            color: var(--primary-navy);
+            margin-bottom: 60px;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        .value-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-subtle);
+            text-align: center;
+            transition: var(--transition);
+        }
+        
+        .value-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .value-icon {
+            width: 60px;
+            height: 60px;
+            background-color: var(--primary-sky);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 24px;
+            color: white;
+        }
+        
+        .value-card h3 {
+            font-size: 1.5rem;
+            color: var(--primary-navy);
+            margin-bottom: 15px;
+        }
+        
+        .value-card p {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+        
+        .about {
+            padding: 80px 20px;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .about-text h2 {
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            color: var(--primary-navy);
+            margin-bottom: 30px;
+        }
+        
+        .about-text p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 30px;
+            line-height: 1.7;
+        }
+        
+        .about-image {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(45deg, var(--primary-navy), var(--primary-sky));
+            border-radius: var(--border-radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+            text-align: center;
+        }
+        
+        .contact {
+            padding: 80px 20px;
+            background-color: var(--background-light);
+        }
+        
+        .contact h2 {
+            text-align: center;
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            color: var(--primary-navy);
+            margin-bottom: 60px;
+        }
+        
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .contact-form {
+            background: white;
+            padding: 40px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-subtle);
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #e1e5e9;
+            border-radius: var(--border-radius);
+            font-size: 16px;
+            transition: var(--transition);
+            font-family: inherit;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--primary-sky);
+            outline: none;
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        .contact-info {
+            padding: 40px;
+        }
+        
+        .contact-info h3 {
+            color: var(--primary-navy);
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+        }
+        
+        .contact-details {
+            background: white;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-subtle);
+        }
+        
+        .contact-item {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .contact-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .contact-item strong {
+            color: var(--primary-navy);
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .contact-item a {
+            color: var(--primary-navy);
+            text-decoration: none;
+        }
+        
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            min-height: 44px;
+            min-width: 44px;
+            border: none;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 600;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 16px;
+            line-height: 1.4;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-sky);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: #1976D2;
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-2px);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            color: var(--primary-navy);
+            border: 2px solid var(--primary-navy);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--primary-navy);
+            color: white;
+        }
+        
+        .footer {
+            background-color: var(--primary-navy);
+            color: white;
+            padding: 40px 20px 20px;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary-sky);
+        }
+        
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* ===== SCROLLBAR ===== */
+        .main-panel::-webkit-scrollbar {
+            width: 6px;
+        }
+        .main-panel::-webkit-scrollbar-thumb {
+            background: #ccc;
+            border-radius: 8px;
+        }
+        .main-panel::-webkit-scrollbar-track {
+            background: #f5f5f5;
+        }
+        
+        .side-panel::-webkit-scrollbar {
+            width: 4px;
+        }
+        .side-panel::-webkit-scrollbar-thumb {
+            background: #ddd;
+            border-radius: 8px;
+        }
+        
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            :root {
+                --side-panel-width: 280px;
+                --top-panel-height: 60px;
+            }
+            
+            .main-panel.shifted {
+                margin-left: 0;
+            }
+            
+            .side-panel {
+                width: 280px;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .values-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .hero {
+                padding: 40px 20px 60px;
+                min-height: calc(100vh - var(--top-panel-height));
+            }
+            
+            .top-panel {
+                padding: 0 16px;
+                height: var(--top-panel-height);
+            }
+            
+            .logo-brand .logo-main {
+                font-size: 18px;
+            }
+            
+            .logo-brand .logo-sub {
+                font-size: 7px;
+                letter-spacing: 2px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            :root {
+                --side-panel-width: 260px;
+            }
+            .side-panel {
+                width: 260px;
+                padding: 20px 16px;
+            }
+            .logo-brand .logo-main {
+                font-size: 16px;
+            }
+            .logo-brand .logo-sub {
+                font-size: 6px;
+                letter-spacing: 1.5px;
+            }
+            .top-panel .hamburger-btn {
+                font-size: 24px;
+                padding: 2px 6px;
+            }
+        }
+        
+        /* ===== ACCESSIBILITY ===== */
+        *:focus {
+            outline: 2px solid var(--primary-sky);
+            outline-offset: 2px;
+        }
+        
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== TOP PANEL (Fixed) ===== -->
+    <header class="top-panel">
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Open navigation menu">☰</button>
+        <a href="#home" class="logo-brand" style="text-decoration:none;">
+            <span class="logo-main">3D<span>C</span>G</span>
+            <span class="logo-sub">Growth in Every Dimension</span>
+        </a>
+        <span class="spacer"></span>
+    </header>
+
+    <!-- ===== SIDE PANEL (Navigation) ===== -->
+    <aside class="side-panel" id="sidePanel" role="navigation" aria-label="Main navigation">
+        <button class="close-panel" id="closePanel" aria-label="Close navigation panel">✕</button>
+        <nav>
+            <a href="#home" class="nav-link active" data-section="home">🏠 Home</a>
+            <a href="#about" class="nav-link" data-section="about">📖 About</a>
+            <a href="#services" class="nav-link" data-section="services">⚡ Services</a>
+            <a href="#contact" class="nav-link" data-section="contact">📬 Contact</a>
+        </nav>
+        <div class="panel-footer">
+            <small>&copy; 2026 3D Commerce Group</small>
+        </div>
+    </aside>
+
+    <!-- ===== MAIN PANEL (Content area) ===== -->
+    <div class="main-panel" id="mainPanel">
+        
+        <!-- PAGE CONTENT -->
+        <div class="page-content">
+            
+            <!-- HOME -->
+            <section class="hero" id="home">
+                <div class="hero-content">
+                    <h1>Making Everyday Products Simple, Affordable, and Reliable.</h1>
+                    <p>We specialize in sourcing and delivering high-quality everyday consumer products that offer reliability, value, and convenience. Our focus is on replenishable essentials that customers can trust and rely on.</p>
+                    <a href="#contact" class="btn btn-primary">Contact Us</a>
+                </div>
+            </section>
+
+            <!-- SERVICES / VALUES -->
+            <section class="values" id="services">
+                <div class="container">
+                    <h2>Our Core Values</h2>
+                    <div class="values-grid">
+                        <div class="value-card fade-in">
+                            <div class="value-icon">✓</div>
+                            <h3>Quality that You Can Trust</h3>
+                            <p>We carefully select products that meet our standards for quality, consistency, and value, so our customers can shop with confidence every time.</p>
+                        </div>
+                        <div class="value-card fade-in">
+                            <div class="value-icon">🤝</div>
+                            <h3>Customer First</h3>
+                            <p>We are committed to providing dependable service, listening to customer feedback, and building lasting relationships through honesty and reliability.</p>
+                        </div>
+                        <div class="value-card fade-in">
+                            <div class="value-icon">🏆</div>
+                            <h3>Driven by Excellence</h3>
+                            <p>As a growing family-owned business, we are dedicated to continuous improvement and delivering products and services that exceed expectations.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ABOUT -->
+            <section class="about" id="about">
+                <div class="container">
+                    <div class="about-content">
+                        <div class="about-text fade-in">
+                            <h2>About 3D Commerce Group</h2>
+                            <p>We are a growing family-owned business, dedicated to providing high-quality, replenishable consumer goods that families rely on every day. Built on the values of integrity, hard work, and exceptional consumer service, we carefully select products that deliver consistent quality and lasting value. As we continue to grow, our commitment remains the same – to earn our customers' trust by offering dependable products and creating a positive shopping experience with every purchase.</p>
+                            <p>Our mission is to make everyday essentials more accessible by offering dependable products at fair prices while delivering outstanding customer service. We have committed to building a business, founded on honesty, quality, and continuous improvement, with the goal of becoming a trusted name that customers can rely on for their everyday needs.</p>
+                            <a href="#contact" class="btn btn-outline">Learn More</a>
+                        </div>
+                        <div class="about-image fade-in">
+                            <div>
+                                <strong>Professional Team Photo</strong><br />
+                                (Replace with actual image:<br />about-team.jpg)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CONTACT -->
+            <section class="contact" id="contact">
+                <div class="container">
+                    <h2>Get in Touch</h2>
+                    <div class="contact-content">
+                        <form class="contact-form fade-in" id="contactForm">
+                            <div class="form-group">
+                                <label for="name">Full Name *</label>
+                                <input type="text" id="name" name="name" required placeholder="Enter your full name" />
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required placeholder="Enter your email address" />
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message *</label>
+                                <textarea id="message" name="message" required placeholder="Tell us how we can help you"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                        </form>
+                        
+                        <div class="contact-info fade-in">
+                            <h3>Contact Information</h3>
+                            <div class="contact-details">
+                                <div class="contact-item">
+                                    <strong>Business Address</strong>
+                                    3D Commerce Group<br />
+                                    9065 Snipe Ln<br />
+                                    Jonesboro, GA 30236
+                                </div>
+                                <div class="contact-item">
+                                    <strong>Phone Number</strong>
+                                    <a href="tel:+16783109551">678.310.9551</a>
+                                </div>
+                                <div class="contact-item">
+                                    <strong>Email</strong>
+                                    <a href="mailto:Contact@3dcgroup.com">Contact@3dcgroup.com</a>
+                                </div>
+                                <div class="contact-item">
+                                    <strong>Business Hours</strong>
+                                    Monday - Friday: 9:00 AM - 5:00 PM<br />
+                                    Saturday: Closed<br />
+                                    Sunday: Closed
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FOOTER -->
+            <footer class="footer">
+                <div class="footer-content">
+                    <div class="footer-links">
+                        <a href="#about">About Us</a>
+                        <a href="#contact">Contact</a>
+                        <a href="/privacy-policy">Privacy Policy</a>
+                        <a href="/terms-of-service">Terms of Service</a>
+                    </div>
+                    <p>&copy; 2026 3D Commerce Group. All rights reserved.</p>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script>
+        (function() {
+            'use strict';
+
+            const sidePanel = document.getElementById('sidePanel');
+            const mainPanel = document.getElementById('mainPanel');
+            const hamburgerBtn = document.getElementById('hamburgerBtn');
+            const closePanelBtn = document.getElementById('closePanel');
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = {
+                home: document.getElementById('home'),
+                about: document.getElementById('about'),
+                services: document.getElementById('services'),
+                contact: document.getElementById('contact')
+            };
+
+            // Get top panel height dynamically
+            function getTopPanelHeight() {
+                const topPanel = document.querySelector('.top-panel');
+                return topPanel ? topPanel.offsetHeight : 68;
+            }
+
+            // ===== PANEL CONTROLS =====
+            function openPanel() {
+                sidePanel.classList.add('open');
+                mainPanel.classList.add('shifted');
+                // Don't block body scroll - main panel remains interactive
+                sessionStorage.setItem('sidePanelOpen', 'true');
+            }
+
+            function closePanel() {
+                sidePanel.classList.remove('open');
+                mainPanel.classList.remove('shifted');
+                sessionStorage.setItem('sidePanelOpen', 'false');
+            }
+
+            function togglePanel() {
+                if (sidePanel.classList.contains('open')) {
+                    closePanel();
+                } else {
+                    openPanel();
+                }
+            }
+
+            // ===== SCROLL TO SECTION WITH TIGHTER OFFSET =====
+            function scrollToSection(sectionId) {
+                const targetSection = document.getElementById(sectionId);
+                if (!targetSection) return;
+
+                const topPanelHeight = getTopPanelHeight();
+                const offset = topPanelHeight - 8;
+                const targetPosition = targetSection.offsetTop - offset;
+
+                mainPanel.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+
+            // ===== EVENT LISTENERS =====
+            hamburgerBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                togglePanel();
+            });
+
+            closePanelBtn.addEventListener('click', closePanel);
+
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && sidePanel.classList.contains('open')) {
+                    closePanel();
+                }
+            });
+
+            // ===== NAVIGATION: update active state & scroll =====
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href').substring(1);
+                    
+                    navLinks.forEach(l => l.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    scrollToSection(targetId);
+                    
+                    history.pushState(null, null, '#' + targetId);
+                    
+                    // Panel stays open — user must close manually
+                });
+            });
+
+            // ===== RESTORE PANEL STATE ON LOAD =====
+            const wasOpen = sessionStorage.getItem('sidePanelOpen') === 'true';
+            if (wasOpen) {
+                openPanel();
+            }
+
+            // ===== HIGHLIGHT ACTIVE NAV LINK BASED ON SCROLL =====
+            function updateActiveLinkOnScroll() {
+                const scrollY = mainPanel.scrollTop;
+                const topPanelHeight = getTopPanelHeight();
+                const offset = topPanelHeight - 8;
+                
+                let activeSection = 'home';
+                let minDistance = Infinity;
+                
+                for (const [id, section] of Object.entries(sections)) {
+                    if (!section) continue;
+                    const sectionTop = section.offsetTop - offset;
+                    const distance = Math.abs(scrollY - sectionTop);
+                    if (distance < minDistance) {
+                        minDistance = distance;
+                        activeSection = id;
+                    }
+                }
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('data-section') === activeSection) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+
+            let scrollTimeout;
+            mainPanel.addEventListener('scroll', function() {
+                if (scrollTimeout) return;
+                scrollTimeout = requestAnimationFrame(() => {
+                    updateActiveLinkOnScroll();
+                    scrollTimeout = null;
+                });
+            });
+
+            // ===== HANDLE HASH ON LOAD =====
+            function handleHashOnLoad() {
+                if (window.location.hash) {
+                    const targetId = window.location.hash.substring(1);
+                    const targetSection = document.getElementById(targetId);
+                    if (targetSection) {
+                        const topPanelHeight = getTopPanelHeight();
+                        const offset = topPanelHeight - 8;
+                        const targetPosition = targetSection.offsetTop - offset;
+                        
+                        setTimeout(() => {
+                            mainPanel.scrollTo({
+                                top: targetPosition,
+                                behavior: 'smooth'
+                            });
+                        }, 50);
+                        
+                        navLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('data-section') === targetId) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                }
+                updateActiveLinkOnScroll();
+            }
+
+            window.addEventListener('load', handleHashOnLoad);
+
+            let resizeTimer;
+            window.addEventListener('resize', function() {
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(() => {
+                    updateActiveLinkOnScroll();
+                }, 200);
+            });
+
+            // ===== FADE-IN OBSERVER =====
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+            
+            document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+            // ===== CONTACT FORM =====
+            const contactForm = document.getElementById('contactForm');
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const formData = new FormData(this);
+                const data = Object.fromEntries(formData);
+                
+                if (!data.name || !data.email || !data.message) {
+                    alert('Please fill in all required fields.');
+                    return;
+                }
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(data.email)) {
+                    alert('Please enter a valid email address.');
+                    return;
+                }
+                
+                const submitBtn = this.querySelector('button[type="submit"]');
+                const originalText = submitBtn.textContent;
+                submitBtn.textContent = 'Sending...';
+                submitBtn.disabled = true;
+                
+                setTimeout(() => {
+                    alert('Thank you for your message! We\'ll get back to you soon.');
+                    this.reset();
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                }, 2000);
+            });
+
+            console.log('✅ Three-panel layout: Main panel remains interactive while side panel is open.');
+        })();
+    </script>
+
+</body>
+</html>
